@@ -1,15 +1,21 @@
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 import os
 import numpy as np
-import pandas as pd
+#import pandas as pd
 from scipy.io.idl import readsav
 from astropy.io import ascii
-from astropy.table import Table, join
+#from astropy.table import Table, join
 import time
 
 
+""" Script written for personal use.
+
+    First, it reads in data catalogs for the DGS galaxies
+    and grids of Cloudy radiative transfer models.
+    Secondly, it identifies the model parameters matching
+    best the observations for each galaxy.
+    Writes down results in a text file. """
+    
+    
 def go_get_obs():
     
     dir_in = '/Users/dcormier/HERSCHEL/DGS/'

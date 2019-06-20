@@ -3,10 +3,15 @@ import pymc3 as pm
 import matplotlib.pyplot as plt
 from astropy.io import fits
 from astropy import wcs
-import seaborn as sns
+#import seaborn as sns
 
-#second step: Bayesian fit
 
+""" Script written for personal use.
+
+    It creates moment maps as FITS files
+    of SOFIA FIFI-LS spectral cubes.
+    Fitting is done with a MCMC approach. """
+        
 
 def ReadMyCube(filename,info=1):
     
@@ -301,10 +306,10 @@ moments_fit_err *= fact
 hd_mom = header
 hd_mom['EXTNAME'] = 'Fitted flux'
 hd_mom['BUNIT'] = 'W/m2/sr'
-#WriteMomFits('test_file.fits', moments_fit, hd_mom)
+WriteMomFits('test_file.fits', moments_fit, hd_mom)
 
 hd_mom['EXTNAME'] = 'Fitted error'
-#WriteMomFits('test_file_err.fits', moments_fit_err, hd_mom)
+WriteMomFits('test_file_err.fits', moments_fit_err, hd_mom)
 
 
 ### END
